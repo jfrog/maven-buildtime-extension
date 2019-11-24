@@ -27,7 +27,7 @@ See https://github.com/prometheus/pushgateway/blob/master/README.md
 
 See following system properties:
 
-To enable capture of results to Prometheus 
+To enable capture of results to Prometheus set to true
 
 ```
 buildtime.output.prom=true/false
