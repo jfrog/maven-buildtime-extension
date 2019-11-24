@@ -17,6 +17,30 @@ I personally would like to publish the results to an InfluxDb instance.
 mvn compile -Dbuildtime.output.csv=true -Dbuildtime.output.csv.file=classes\out.csv
 ```
 
+## Capture results in Prometheus
+You can capture results in Prometheus. You will see data points in the following form:
+
+mvn_build_time_minimal_pom_maven_jar_plugin_jar__default_jar{builder="myjenkinsbuild2",job="mvn_build_time"}
+
+This integration relies on the Prometheus Push Gateway. You will have to install it and make sure Prometheus is configured to scrape it.
+See https://github.com/prometheus/pushgateway/blob/master/README.md
+
+See following system properties:
+
+To enable capture of results to Prometheus 
+
+```
+buildtime.output.prom=true/false
+```
+Prometheus Push Gateway url, or host:port.
+```
+buildtime.output.prom.push.gateway=
+```
+A builder label with the name 'builder' will be added with the following value
+```
+buildtime.output.prom.builder.label=
+```
+
 Maven introduced slf4j in version 3.2 which broke this build extension for Maven 3.0 users. 
 Version 2.0+ will work with the latest version of Maven.
 

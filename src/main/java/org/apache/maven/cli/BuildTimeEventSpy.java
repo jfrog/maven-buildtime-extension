@@ -3,6 +3,7 @@ package org.apache.maven.cli;
 import java.util.Arrays;
 import java.util.List;
 
+import co.leantechniques.maven.buildtime.output.PrometheusReporter;
 import org.apache.maven.eventspy.AbstractEventSpy;
 import org.apache.maven.eventspy.EventSpy;
 import org.apache.maven.execution.ExecutionEvent;
@@ -29,7 +30,7 @@ public class BuildTimeEventSpy extends AbstractEventSpy {
     }
 
     public BuildTimeEventSpy() {
-        reporters = Arrays.asList(new LogReporter(), new CsvReporter());
+        reporters = Arrays.asList(new LogReporter(), new CsvReporter(), new PrometheusReporter());
     }
 
     private final SessionTimer session = new SessionTimer();

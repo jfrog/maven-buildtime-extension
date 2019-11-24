@@ -73,6 +73,16 @@
             <version>1.9.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient</artifactId>
+            <version>0.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.prometheus</groupId>
+            <artifactId>simpleclient_pushgateway</artifactId>
+            <version>0.8.0</version>
+        </dependency>
     </dependencies>
     <!--
     AVOID RELEASE REPOSITORY/PLUGINREPOSITORY:
